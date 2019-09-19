@@ -6,13 +6,13 @@ const Member = (props) => {
     console.log(props.members);
     return (
         <div>
-            {members.map(member => (
+            {/* {members.map(member => ( */}
                 <div key={members.id}>
                     <h2>{members.name}</h2>
                     <p>{members.email}</p>
                     <p>{members.role}</p>
                 </div>
-            ))}
+            {/* ))} */}
         </div>
     )
 };

@@ -1,24 +1,32 @@
 import React, { useState } from 'react';
 
 function Form (props) {
-    const [members, setMembers] = useState(
+    const [member, setMember] = useState(
         {
-            id: 1,
-            name: "Bob Ross",
-            email: "happy@littletree.com",
-            role: "designer"
+            name: "",
+            email: "",
+            role: "",
         }
     );
 
     const handleChanges = e => {
-        console.log(members);
-        setMembers({ ...members, [e.target.name]: e.target.value });
+        console.log(member);
+        setMember({ ...member, [e.target.name]: e.target.value });
     }
+
+    // const newMember = members => {
+    //     const addMember = {
+    //         id: members.id,
+    //         name: members.name,
+    //         email: members.email,
+    //         role: members.role
+    //     }
+    // }
 
     const submitForm = e => {
         e.preventDefault();
-        props.newMember(members);
-        setMembers({ name: '', email: '', role: '' });
+        props.newMember(member);
+        setMember({ name: '', email: '', role: '' });
     };
 
 
@@ -30,7 +38,7 @@ function Form (props) {
                 type='text'
                 name='name'
                 onChange={handleChanges}
-                value={members.name}
+                value={member.name}
             />
             <label htmlFor="email">Email</label>
             <input
@@ -38,7 +46,7 @@ function Form (props) {
                 type='text'
                 name='email'
                 onChange={handleChanges}
-                value={members.email}
+                value={member.email}
             />
             <label htmlFor="role">Role</label>
             <input
@@ -46,8 +54,9 @@ function Form (props) {
                 type='text'
                 name='role'
                 onChange={handleChanges}
-                value={members.role}
+                value={member.role}
             />
+            <button type='submit'>Submit Member</button>
         </form>
     )
 };
