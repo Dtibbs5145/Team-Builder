@@ -14,15 +14,6 @@ function Form (props) {
         setMember({ ...member, [e.target.name]: e.target.value });
     }
 
-    // const newMember = members => {
-    //     const addMember = {
-    //         id: members.id,
-    //         name: members.name,
-    //         email: members.email,
-    //         role: members.role
-    //     }
-    // }
-
     const submitForm = e => {
         e.preventDefault();
         props.newMember(member);

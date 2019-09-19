@@ -10,7 +10,7 @@ function App(props) {
         id: 1,
         name: "Bob Ross",
         email: "happy@littletree.com",
-        role: "designer"
+        role: "Designer"
     }
 ]);
 
@@ -21,7 +21,7 @@ function App(props) {
         email: members.email,
         role: members.role
     };
-    setMembers([...members, addMember]);
+    setMembers([ ...members, addMember ]);
   };
 
   return (

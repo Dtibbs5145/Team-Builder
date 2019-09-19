@@ -1,18 +1,16 @@
 import React from 'react';
-import members from './Form';
-// import { tsPropertySignature } from '@babel/types';
 
 const Member = (props) => {
     console.log(props.members);
     return (
         <div>
-            {/* {members.map(member => ( */}
-                <div key={members.id}>
-                    <h2>{members.name}</h2>
-                    <p>{members.email}</p>
-                    <p>{members.role}</p>
+            {props.members.map(member => (
+                <div className='members' key={member.id}>
+                    <h2>{member.name}</h2>
+                    <p>{member.email}</p>
+                    <p>{member.role}</p>
                 </div>
-            {/* ))} */}
+            ))}
         </div>
     )
 };
