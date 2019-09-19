@@ -4,7 +4,7 @@ import Member from './components/Member';
 import Form from './components/Form';
 
 
-function App(props) {
+function App() {
   const [members, setMembers] = useState([
     {
         id: 1,
@@ -14,14 +14,24 @@ function App(props) {
     }
 ]);
 
-  const newMember = members => {
+  // const newMember = members => {
+  //   const addMember = {
+  //       id: members.id,
+  //       name: members.name,
+  //       email: members.email,
+  //       role: members.role
+  //   };
+  //   setMembers([ ...members, addMember ]);
+  // };
+
+  const newMember = credentials => {
     const addMember = {
-        id: members.id,
-        name: members.name,
-        email: members.email,
-        role: members.role
+        id: Date.now(),
+        name: credentials.name,
+        email: credentials.email,
+        role: credentials.role
     };
-    setMembers([ ...members, addMember ]);
+    setMembers([...members, addMember]);
   };
 
   return (
